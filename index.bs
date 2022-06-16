@@ -342,11 +342,10 @@ or failure:
 4. If there are zero elements in |tokens|,
 	set |tokens| to ["0px"].
 5. Replace each |token| in |tokens|:
-	* If |token| is an <a>absolute length</a> <a>dimension</a> token,
-		replace it with a an equivalent pixel length.
+	* If |token| is a <<zero>> value, replace it with "0px".
 	* If |token| is a <<percentage>> token,
 		replace it with an equivalent percentage.
-	* Otherwise, return failure.
+	* If |token| is not a pixel length or percentage token, return failure.
 6. If there is one element in |tokens|,
 	append three duplicates of that element to |tokens|.
 	Otherwise, if there are two elements are |tokens|,
