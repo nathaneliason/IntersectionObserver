@@ -715,20 +715,10 @@ within the "<i>Update the rendering</i>" step,
 in the <a>HTML Event Loops Processing Model</a>.
 
 <h4 id='pending-initial-observation'>Pending initial IntersectionObserver targets</h4>
-A {{document}} is said to have <dfn>pending initial IntersectionObserver targets</dfn>
-if there is at least one {{IntersectionObserver}} meeting these criteria:
-	<ol>
-		<li>The |observer|'s {{IntersectionObserver|root}} is in the |document|
-		   (for the <a>top-level browsing context</a>, this includes <a>implicit root observers</a>).
-		</li>
-		<li>The |observer| has at least one |target| in its {{[[ObservationTargets]]}} slot for which
-		    no {{IntersectionObserverEntry}} has yet been queued.
-		</li>
-	</ol>
 
-In the <a>HTML Event Loops Processing Model</a>, under the "<i>Update the rendering</i>" step, the "<i>Unnecessary rendering</i>" step should be modified to add an additional requirement for skipping the rendering update:
-
-<ul><li>The |document| does not have <a>pending initial IntersectionObserver targets</a>.</li></ul>
+An Intersection Observer processing step exists as a substep
+within the "<i>Update the rendering</i>" step in the <a>HTML Event Loops
+Processing Model</a>.
 
 <!-- ============================================================ -->
 <h2 id=accessibility>Accessibility Considerations</h2>
